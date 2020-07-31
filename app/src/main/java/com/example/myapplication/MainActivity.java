@@ -38,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
                     float ideal; //理想體重
                     float normal; //正常體重
                     TextView result = (TextView)findViewById(R.id.tv3);// 取得 顯示結果 物件
+                    TextView nor = (TextView)findViewById(R.id.textView4);
+                    TextView nor1 = (TextView)findViewById(R.id.textView8);
+                    TextView idea = (TextView)findViewById(R.id.textView12);
                     fh = fh/100; // 計算BMI
                     fh = fh*fh;  // 計算BMI
 
@@ -45,13 +48,12 @@ public class MainActivity extends AppCompatActivity {
                     nf.setMaximumFractionDigits(2);                 // 限制小數第二位
                     fresult = fw/fh;                                // 計算BMI
                     result.setText(nf.format(fw/fh) +"");           // 顯示BMI計算結果
-                    TextView dia = (TextView)findViewById(R.id.tv4);// 取得 顯示診斷 物件
-                    //TextView nor = (TextView)findViewById(R.id.textView4); //理想體重
-                    //TextView ide = (TextView)findViewById(R.id.textView);
-                    ideal=fh*fh*22;
-                    //e.setText("ideal");
-                   // nor.setText((int) (fh*fh*22-(fh*fh*22)*(1/10))+"~"+(int) (fh*fh*22+(fh*fh*22)*(1/10)));
+                    TextView dia = (TextView)findViewById((R.id.tv4));// 取得 顯示診斷 物件
+                    nor.setText(nf.format(fh*22-fh*22*1/10) +"     ~");
+                    nor1.setText(nf.format(fh*22+fh*22*1/10) +"");
+                    idea.setText(nf.format(fh*22) +"");
                     // 診斷結果 顯示
+
                     if (fresult<18.5)
                         dia.setText("體重過輕");
                     else if (18.5 <= fresult && fresult< 24)
