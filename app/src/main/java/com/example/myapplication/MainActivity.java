@@ -1,3 +1,4 @@
+//嗨，我叫doralai
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
